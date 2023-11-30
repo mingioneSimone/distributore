@@ -18,7 +18,7 @@ public class Main {
 			System.out.println("\n\n\n\n\n\n");
 			
 			distributore.elencoBevande();
-			distributore.visualizzaCredito();
+			System.out.println("il tuo credito è: "+ distributore.getCredito());
 			
 			System.out.println(" ");
 			System.out.println("1 - inserisci moneta");
@@ -49,7 +49,7 @@ public class Main {
                         System.out.println("Quanta ne vuoi caricare?");
                         quantita = Integer.parseInt(sc.nextLine());
                         distributore.caricaBevanda(codiceBevanda, quantita);
-                        break;  // Aggiunto break per uscire dal case
+                       
                     } else {
                         System.out.println("Password errata riprova:");
                         password = sc.nextLine();
@@ -59,15 +59,16 @@ public class Main {
 
                 if (cont == 3) {
                     System.out.println("Troppi tentativi. Riprova fra 5 secondi.");
-                   
+                
                         try {
-							Thread.sleep(30000);
+							Thread.sleep(5000);
 						} catch (InterruptedException e) {
-							// TODO Auto-generated catch block
+							
 							e.printStackTrace();
 						}  
                     
                     cont = 0;  // Resetta il contatore dopo l'attesa
+                	
                 }
                 break;
             case "4":
